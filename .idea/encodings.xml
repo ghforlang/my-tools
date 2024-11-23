@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/local-authentication/local-jwt/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/local-authentication/local-jwt/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/local-authentication/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/local-authentication/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/local-cache/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/local-cache/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/local-codegenerate/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/local-codegenerate/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/local-devicetool/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/local-devicetool/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/local-event-distruptor/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/local-event-distruptor/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/local-event-spring/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/local-event-spring/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/local-packaging/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/local-packaging/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/local-script/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/local-script/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/local-utils/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/local-utils/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+  </component>
+</project>
