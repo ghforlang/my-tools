@@ -20,7 +20,7 @@ import javax.annotation.Resource;
  * @version 1.0 2024/11/23-00:49
  * @since 1.0
  */
-@Configuration
+//@Configuration
 public class JwtAuthenticationSecurityConfig extends SecurityConfigurerAdapter<DefaultSecurityFilterChain, HttpSecurity> {
     @Resource
     private CustomAuthenticationSuccessHandler successHandler;

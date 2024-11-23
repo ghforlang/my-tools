@@ -2,6 +2,12 @@ package jwt.fan.nbu.edu.cn;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.security.web.DefaultSecurityFilterChain;
+import org.springframework.security.web.SecurityFilterChain;
+
+import javax.servlet.Filter;
+import java.util.List;
 
 /**
  * @author laoshi . hua
@@ -11,6 +17,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class JwtApplication {
     public static void main(String[] args) {
-        SpringApplication.run(JwtApplication.class,args);
+        ConfigurableApplicationContext context =  SpringApplication.run(JwtApplication.class,args);
+        System.out.println("启动成功!");
+        //打印加载的SecurityFilter
+//        List<Filter> filters = context.getBean(DefaultSecurityFilterChain.class).getFilters();
+//        for (Filter filter : filters) {
+//            System.out.println(filter.getClass().getName());
+//        }
     }
 }

@@ -8,7 +8,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.io.Serializable;
 import java.util.Collection;
-import java.util.Set;
 
 /**
  * @author laoshi . hua
@@ -17,35 +16,60 @@ import java.util.Set;
  */
 @Getter
 @Setter
-public class UserModel implements UserDetails, Serializable {
-    private Long id;
-    private String username;
-    private String password;
-    private Set<? extends GrantedAuthority> authorities;
+@AllArgsConstructor
+public class UserWrapper implements UserDetails, Serializable {
+
+    private User user;
 
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return authorities;
+        return null;
     }
 
+    @Override
+    public String getPassword() {
+        return user.getPassword();
+    }
+
+    @Override
+    public String getUsername() {
+        return user.getUsername();
+    }
+
+    /**
+     * TODO 先默认未过期
+     * @return
+     */
     @Override
     public boolean isAccountNonExpired() {
         return true;
     }
 
+    /**
+     * TODO 默认未锁
+     * @return
+     */
     @Override
     public boolean isAccountNonLocked() {
         return true;
     }
 
+    /**
+     * TODO 默认未过期
+     * @return
+     */
     @Override
     public boolean isCredentialsNonExpired() {
         return true;
     }
 
+    /**
+     * TODO 用户是否可用，先默认可用
+     * @return
+     */
     @Override
     public boolean isEnabled() {
-        return true;
+        return user.getUserStatus() == 0;
     }
 }

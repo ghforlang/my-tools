@@ -1,6 +1,7 @@
 package jwt.fan.nbu.edu.cn.core.handler;
 
 import jwt.fan.nbu.edu.cn.component.JwtUtils;
+import jwt.fan.nbu.edu.cn.model.LoginResVO;
 import jwt.fan.nbu.edu.cn.model.RegisterResultVO;
 import jwt.fan.nbu.edu.cn.model.ResponseModel;
 import jwt.fan.nbu.edu.cn.utils.ResultUtils;
@@ -22,8 +23,8 @@ import java.io.IOException;
  * @since 1.0
  * @description 自定义认证成功处理器 适用于 form表单登录方式
  */
-@Component
-@Slf4j
+//@Component
+//@Slf4j
 public class CustomAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
 
     @Resource
@@ -38,7 +39,7 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
         String token = jwtUtils.generateToken(username);
 
         // 返回 Token
-        RegisterResultVO loginRspVO = RegisterResultVO.builder()
+        LoginResVO loginRspVO = LoginResVO.builder()
                 .token(token)
                 .username(username)
                 .build();

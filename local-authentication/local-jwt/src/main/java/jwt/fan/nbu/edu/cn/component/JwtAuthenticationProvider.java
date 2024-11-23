@@ -19,8 +19,8 @@ import javax.annotation.Resource;
  * @version 1.0 2024/11/22-22:01
  * @since 1.0
  */
-@Component
-@Slf4j
+//@Component
+//@Slf4j
 public class JwtAuthenticationProvider implements AuthenticationProvider {
 
     @Resource

@@ -19,12 +19,12 @@ import java.io.IOException;
  * @version 1.0 2024/11/22-18:23
  * @since 1.0
  */
-@Slf4j
-@Component
+//@Slf4j
+//@Component
 public class CustomAuthenticationEntryPoint implements AuthenticationEntryPoint {
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException, ServletException {
-        log.warn("用户未登录访问受保护的资源: ", authException);
+//        log.warn("用户未登录访问受保护的资源: ", authException);
         if (authException instanceof InsufficientAuthenticationException) {
             ResultUtils.fail(response, HttpStatus.UNAUTHORIZED.value(), ResponseModel.fail("无访问权限,请先登录"));
             return;

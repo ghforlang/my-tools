@@ -32,7 +32,7 @@ public class ResponseModel<T> implements Serializable {
         return response;
     }
 
-    public static <T> ResponseModel fail(String message){
+    public static ResponseModel fail(String message){
         ResponseModel response = new ResponseModel();
         response.setCode(1);
         response.setMessage(message);

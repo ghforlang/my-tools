@@ -1,7 +1,8 @@
 package jwt.fan.nbu.edu.cn.core.filter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import jwt.fan.nbu.edu.cn.model.UserModel;
+import jwt.fan.nbu.edu.cn.model.UserWrapper;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
@@ -9,7 +10,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -22,20 +22,24 @@ import java.io.IOException;
  * @since 1.0
  * @descriptin jwt认证过滤器;
  */
-@Component
+//@Component
 public class JwtAuthenticationFilter extends AbstractAuthenticationProcessingFilter {
     @Resource
     private UserDetailsService userDetailsService;
 
+    @Resource
+    private AuthenticationManager authenticationManagerBean;
+
     public JwtAuthenticationFilter(){
         super(new AntPathRequestMatcher("/api/v1/register", "POST"));
+        setAuthenticationManager(authenticationManagerBean);
     }
 
 
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
         try {
-            UserModel creds = new ObjectMapper().readValue(request.getInputStream(), UserModel.class);
+            UserWrapper creds = new ObjectMapper().readValue(request.getInputStream(), UserWrapper.class);
             UserDetails userDetails = userDetailsService.loadUserByUsername(creds.getUsername());
             return getAuthenticationManager().authenticate(
                     new UsernamePasswordAuthenticationToken(

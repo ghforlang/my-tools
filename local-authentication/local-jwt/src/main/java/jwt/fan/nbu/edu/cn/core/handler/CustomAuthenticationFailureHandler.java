@@ -20,12 +20,12 @@ import java.io.IOException;
  * @version 1.0 2024/11/22-17:58
  * @since 1.0
  */
-@Component
-@Slf4j
+//@Component
+//@Slf4j
 public class CustomAuthenticationFailureHandler implements AuthenticationFailureHandler {
     @Override
     public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException, ServletException {
-        log.warn("登录失败,{}",exception.getMessage());
+//        log.warn("登录失败,{}",exception.getMessage());
         if (exception instanceof UsernameOrPasswordNullException) {
             // 用户名或密码为空
             ResultUtils.fail(response, ResponseModel.fail(exception.getMessage()));
